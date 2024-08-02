@@ -1,0 +1,9 @@
+{
+	"name": "datafactorylab10",
+	"location": "koreacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "edbf23b1-8e44-4241-90fb-9d5d7406723b",
+		"tenantId": "299692cc-a833-4659-b8d4-3a7cdf6a66c2"
+	}
+}
