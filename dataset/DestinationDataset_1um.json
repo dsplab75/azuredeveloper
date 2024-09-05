@@ -1,9 +1,8 @@
 {
 	"name": "DestinationDataset_1um",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ADF_Storage",
-			"type": "LinkedServiceReference"
+		"folder": {
+			"name": "Chapter02"
 		},
 		"annotations": [],
 		"type": "Binary",
