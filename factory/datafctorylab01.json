@@ -1,0 +1,9 @@
+{
+	"name": "datafctorylab01",
+	"location": "koreacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8a3b063f-72ae-4bf8-a62d-eb642664efda",
+		"tenantId": "299692cc-a833-4659-b8d4-3a7cdf6a66c2"
+	}
+}
