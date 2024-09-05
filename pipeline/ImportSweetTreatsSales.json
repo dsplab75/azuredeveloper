@@ -20,7 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "SweetTreats",
+							"wildcardFolderPath": "SampleData/SweetTreats/",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
@@ -30,8 +30,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "Truncate table dbo.Sales_Load",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
