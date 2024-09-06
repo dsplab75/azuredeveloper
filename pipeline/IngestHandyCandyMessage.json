@@ -44,54 +44,51 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['Month']"
+									"path": "$['TransactionId']"
 								},
 								"sink": {
-									"name": "Month"
+									"name": "TransactionId",
+									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Company']"
+									"path": "$['TransactionDate']"
 								},
 								"sink": {
-									"name": "Company"
+									"name": "TransactionDate",
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
-									"path": "['Product']"
+									"path": "$['StoreId']"
 								},
 								"sink": {
-									"name": "Product"
+									"name": "StoreId",
+									"type": "Int16"
 								}
 							},
 							{
 								"source": {
-									"path": "['ManufacturerProductCode']"
+									"path": "$['Items'][0]['Product']"
 								},
 								"sink": {
-									"name": "ManufacturerProductCode"
+									"name": "Product",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['Units']"
+									"path": "$['Items'][0]['Price']"
 								},
 								"sink": {
-									"name": "Units"
-								}
-							},
-							{
-								"source": {
-									"path": "['Value']"
-								},
-								"sink": {
-									"name": "Value"
+									"name": "Price",
+									"type": "String"
 								}
 							}
 						],
-						"collectionReference": "$['Sales']"
+						"collectionReference": "$['Items']"
 					}
 				},
 				"inputs": [
