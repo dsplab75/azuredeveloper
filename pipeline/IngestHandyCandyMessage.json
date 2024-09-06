@@ -1,0 +1,116 @@
+{
+	"name": "IngestHandyCandyMessage",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "sampledata/HandyCandy",
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Month']"
+								},
+								"sink": {
+									"name": "Month"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Company']"
+								},
+								"sink": {
+									"name": "Company"
+								}
+							},
+							{
+								"source": {
+									"path": "['Product']"
+								},
+								"sink": {
+									"name": "Product"
+								}
+							},
+							{
+								"source": {
+									"path": "['ManufacturerProductCode']"
+								},
+								"sink": {
+									"name": "ManufacturerProductCode"
+								}
+							},
+							{
+								"source": {
+									"path": "['Units']"
+								},
+								"sink": {
+									"name": "Units"
+								}
+							},
+							{
+								"source": {
+									"path": "['Value']"
+								},
+								"sink": {
+									"name": "Value"
+								}
+							}
+						],
+						"collectionReference": "$['Sales']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ABS_JSON_HandyCandy",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ABS_PAR_HadnyCandy",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Chapter03"
+		},
+		"annotations": []
+	}
+}
