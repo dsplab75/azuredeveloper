@@ -20,7 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "sampledata/HandyCandy",
+							"wildcardFolderPath": "SampleData/HandyCandy",
 							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						},
