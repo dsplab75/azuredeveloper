@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "From_Json_To_Parquet",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
