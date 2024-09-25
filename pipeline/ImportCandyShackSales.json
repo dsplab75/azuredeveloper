@@ -35,69 +35,8 @@
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "Retailer",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Retailer",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "SalesMonth",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SalesMonth",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "Product",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Product",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "SalesValue",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SalesValueUSD",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
-									"name": "UnitsSold",
-									"type": "String"
-								},
-								"sink": {
-									"name": "UnitsSold",
-									"type": "Int32"
-								}
-							}
-						]
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ABS_CSV_CandyShack",
-						"type": "DatasetReference"
-					}
-				]
+					"enableStaging": false
+				}
 			}
 		],
 		"folder": {
