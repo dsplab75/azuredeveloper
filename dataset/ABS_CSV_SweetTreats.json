@@ -13,6 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "*",
 				"folderPath": "SweetTreats/Apr-20",
 				"container": "sampledata"
 			},
