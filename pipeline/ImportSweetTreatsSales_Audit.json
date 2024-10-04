@@ -206,11 +206,17 @@
 							"type": "Int32"
 						},
 						"RunEndDateTime": {
-							"value": "",
+							"value": {
+								"value": "@utcNow()",
+								"type": "Expression"
+							},
 							"type": "DateTime"
 						},
 						"RunSeqNo": {
-							"value": "",
+							"value": {
+								"value": "@activity('Lookup RunSeqNo').output.firstRow.RunSeqNo",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RunStatus": {
