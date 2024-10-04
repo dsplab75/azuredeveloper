@@ -192,11 +192,17 @@
 							"type": "Int32"
 						},
 						"RowsCopied": {
-							"value": "",
+							"value": {
+								"value": "@activity('Import Sales Data').output.rowsCopied",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RowsRead": {
-							"value": "",
+							"value": {
+								"value": "@activity('Import Sales Data').output.rowsRead",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RunEndDateTime": {
