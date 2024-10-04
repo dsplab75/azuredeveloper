@@ -254,8 +254,23 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "RunSeqNo",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
 			}
 		],
+		"variables": {
+			"RunSeqNo": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "Chapter04"
 		},
