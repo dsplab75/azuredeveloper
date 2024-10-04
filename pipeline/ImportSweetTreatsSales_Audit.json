@@ -185,7 +185,10 @@
 					"storedProcedureName": "[dbo].[LogPipeLineEnd]",
 					"storedProcedureParameters": {
 						"FilesRead": {
-							"value": "",
+							"value": {
+								"value": "@activity('Import Sales Data').output.filesRead",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RowsCopied": {
