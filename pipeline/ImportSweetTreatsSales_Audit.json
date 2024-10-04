@@ -7,7 +7,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Lookup RunSeqNo",
+						"activity": "Set RunSeqNo",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -258,7 +258,14 @@
 			{
 				"name": "Set RunSeqNo",
 				"type": "SetVariable",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Lookup RunSeqNo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"secureOutput": false,
 					"secureInput": false
