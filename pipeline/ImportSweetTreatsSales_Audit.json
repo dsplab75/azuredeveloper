@@ -256,7 +256,7 @@
 				}
 			},
 			{
-				"name": "RunSeqNo",
+				"name": "Set RunSeqNo",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
