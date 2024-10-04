@@ -30,7 +30,7 @@
 								"value": "$$FILEPATH"
 							},
 							{
-								"name": "PipelineRunId",
+								"name": "RunSeqNo",
 								"value": {
 									"value": "@pipeline().RunId",
 									"type": "Expression"
