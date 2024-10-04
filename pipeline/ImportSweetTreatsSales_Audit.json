@@ -273,7 +273,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "RunSeqNo",
-					"value": "-1"
+					"value": {
+						"value": "@activity('Lookup RunSeqNo').output.firstRow.RunSeqNo",
+						"type": "Expression"
+					}
 				}
 			}
 		],
