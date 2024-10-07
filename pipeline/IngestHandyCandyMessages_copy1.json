@@ -96,7 +96,7 @@
 						"parameters": {
 							"Container": "sampledata",
 							"Directory": "HandyCandy",
-							"File": ".json"
+							"File": "*.json"
 						}
 					}
 				],
