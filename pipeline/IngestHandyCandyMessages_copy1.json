@@ -20,6 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -94,9 +95,7 @@
 						"referenceName": "ABS_JSON_Blob_Using_Keyvault",
 						"type": "DatasetReference",
 						"parameters": {
-							"Container": "sampledata",
-							"Directory": "HandyCandy",
-							"File": "*.json"
+							"Directory": "HandyCandy"
 						}
 					}
 				],
