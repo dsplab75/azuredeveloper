@@ -1,0 +1,21 @@
+{
+	"name": "AzureBlobStorageUsingKeyVault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultForADF",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ADFBlobstorageConnectionString"
+			}
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
