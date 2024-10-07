@@ -1,0 +1,20 @@
+{
+	"name": "ABS_JSON_Blob_Using_Keyvault",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageUsingKeyVault",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Chapter05"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			}
+		},
+		"schema": {}
+	}
+}
