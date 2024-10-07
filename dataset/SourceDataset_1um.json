@@ -1,6 +1,10 @@
 {
 	"name": "SourceDataset_1um",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADFDemoStorage01",
+			"type": "LinkedServiceReference"
+		},
 		"folder": {
 			"name": "Chapter02"
 		},
