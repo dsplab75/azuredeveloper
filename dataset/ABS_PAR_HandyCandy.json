@@ -13,7 +13,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "HandyCandy.parquet",
+				"fileName": {
+					"value": "(@utcNow()).parquet",
+					"type": "Expression"
+				},
 				"folderPath": "datalake",
 				"container": "output"
 			},
