@@ -1,0 +1,26 @@
+{
+	"name": "AnyBlobStorage",
+	"properties": {
+		"type": "AzureBlobStorage",
+		"parameters": {
+			"ConnectionSecret": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "azureKeyVaultForADF",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "@linkedService().ConnectionSecret"
+			}
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
