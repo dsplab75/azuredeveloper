@@ -27,8 +27,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "*",
-				"folderPath": "SweetTreats/Apr-20",
+				"fileName": {
+					"value": "@dataset().File",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Directory",
+					"type": "Expression"
+				},
 				"container": "sampledata"
 			},
 			"columnDelimiter": ",",
