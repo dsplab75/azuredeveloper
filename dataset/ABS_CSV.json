@@ -5,8 +5,22 @@
 			"referenceName": "ADFDemoStorage01",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Container": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"File": {
+				"type": "string"
+			},
+			"LinkedServiceConnectionString": {
+				"type": "string"
+			}
+		},
 		"folder": {
-			"name": "Chapter03"
+			"name": "Chapter06"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
