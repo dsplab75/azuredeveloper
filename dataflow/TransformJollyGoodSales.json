@@ -13,18 +13,37 @@
 						"type": "DatasetReference"
 					},
 					"name": "JollyGoodSales"
+				},
+				{
+					"linkedService": {
+						"referenceName": "ADFDemoStorage01",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ExchangeRates"
 				}
 			],
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "MonthTotalFilter"
 				},
 				{
-					"name": "lookup1"
+					"name": "RatesToUSD"
+				},
+				{
+					"name": "LookupExchangeRates"
+				},
+				{
+					"name": "derivedColumnExpression"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     RunSeqNo as integer (-1)",
+				"}",
 				"source(output(",
 				"          Period as date,",
 				"          Product as string,",
@@ -35,12 +54,47 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> JollyGoodSales",
+				"source(output(",
+				"          FromCurrency as string,",
+				"          ToCurrency as string,",
+				"          Date as date,",
+				"          ExchangeRate as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'excel',",
+				"     container: 'sampledata',",
+				"     fileName: 'ExchangeRates.xlsx',",
+				"     sheetName: 'Sheet1',",
+				"     firstRowAsHeader: true) ~> ExchangeRates",
 				"JollyGoodSales filter(Product != 'Month Total'\r",
-				") ~> filter1",
-				"filter1 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				") ~> MonthTotalFilter",
+				"ExchangeRates filter(ToCurrency == 'USD') ~> RatesToUSD",
+				"MonthTotalFilter, RatesToUSD lookup(Currency == FromCurrency",
+				"     && Period == Date,",
 				"     multiple: false,",
 				"     pickup: 'any',",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> LookupExchangeRates",
+				"LookupExchangeRates derive(SalesValueUSD = {Unit Price}*{Units Sold}*ExchangeRate,",
+				"          Retailer = 'Jolly Good Ltd',",
+				"          RunSeqNo = $RunSeqNo) ~> derivedColumnExpression",
+				"derivedColumnExpression select(mapColumn(",
+				"          Period,",
+				"          Product,",
+				"          {Unit Price},",
+				"          Currency,",
+				"          {Units Sold},",
+				"          FromCurrency,",
+				"          ToCurrency,",
+				"          Date,",
+				"          ExchangeRate,",
+				"          SalesValueUSD,",
+				"          Retailer,",
+				"          RunSeqNo",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
