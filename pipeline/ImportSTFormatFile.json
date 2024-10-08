@@ -141,7 +141,7 @@
 								"value": "@pipeline().parameters.File",
 								"type": "Expression"
 							},
-							"LinkedServiceConnectionString": "StorageAccountConnectionString"
+							"LinkedServiceConnectionString": "AzureKeyVaultForADF"
 						}
 					}
 				],
