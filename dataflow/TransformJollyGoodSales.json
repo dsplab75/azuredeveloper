@@ -19,7 +19,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          Period as string,",
+				"          Period as date,",
 				"          Product as string,",
 				"          {Unit Price} as string,",
 				"          Currency as string,",
