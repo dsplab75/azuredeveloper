@@ -1,0 +1,9 @@
+{
+	"name": "ExecutePipelineActivity",
+	"properties": {
+		"folder": {
+			"name": "Chapter05"
+		},
+		"annotations": []
+	}
+}
