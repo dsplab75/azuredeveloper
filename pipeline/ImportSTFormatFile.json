@@ -130,7 +130,10 @@
 				"inputs": [
 					{
 						"referenceName": "ABS_CSV",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Container": "sampledata"
+						}
 					}
 				],
 				"outputs": [
