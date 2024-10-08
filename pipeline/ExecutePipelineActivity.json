@@ -15,7 +15,10 @@
 						"referenceName": "ImportSTFormatFolder",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"WildcardFolderPath": "SweetTreats"
+					}
 				}
 			}
 		],
