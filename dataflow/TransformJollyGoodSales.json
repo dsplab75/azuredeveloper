@@ -8,14 +8,26 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "Excel",
+						"type": "DatasetReference"
+					},
 					"name": "JollyGoodSales"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> JollyGoodSales"
+				"source(output(",
+				"          Period as string,",
+				"          Product as string,",
+				"          {Unit Price} as string,",
+				"          Currency as string,",
+				"          {Units Sold} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> JollyGoodSales"
 			]
 		}
 	}
