@@ -19,6 +19,9 @@
 			"transformations": [
 				{
 					"name": "filter1"
+				},
+				{
+					"name": "lookup1"
 				}
 			],
 			"scriptLines": [
@@ -32,7 +35,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> JollyGoodSales",
-				"JollyGoodSales filter(Product != 'Month Total') ~> filter1"
+				"JollyGoodSales filter(Product != 'Month Total'\r",
+				") ~> filter1",
+				"filter1 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     multiple: false,",
+				"     pickup: 'any',",
+				"     broadcast: 'auto')~> lookup1"
 			]
 		}
 	}
