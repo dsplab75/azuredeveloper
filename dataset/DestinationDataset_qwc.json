@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_qwc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageForCookBookLab",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
+			}
+		}
+	}
+}
